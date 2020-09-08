@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- this is our beans 
+	<bean class="com.springcore.Employee" name="employee1"  p:studentId="24234" p:studentName="Ram Singh" p:studentAddress="Delhi"    />-->
+
+	<!-- second bean  
+	<bean class="com.springcore.Student" name="student2"  p:studentId="1341" p:studentName="Shyam Singh" p:studentAddress="Lucknow" />-->
+
+
+<!-- This is 1st method -->
+<!-- this is our beans  -->
+          <!-- value as a tag -->
+  <!--  
+	<bean class="com.springcore.Employee" name="employee1">
+	  <property name="emp_id">
+	      <value>101</value>
+	  </property>
+	  
+	  <property name="emp_name">
+	      <value>Saurav kumar</value>
+	  </property>
+	  
+	  <property name="emp_gender">
+	      <value>Male</value>
+	  </property>
+	  
+	  <property name="emp_email">
+	      <value>krsaurav.097@gmail.com</value>
+	  </property>
+	  
+	  <property name="emp_mobno">
+	      <value>7979969287</value>
+	  </property>
+	  
+	 <property name="emp_salary">
+	      <value>88000.95</value>
+	  </property>
+	  </bean>
+	     -->
+	     
+ <!-- This is 2nd method -->
+<!-- this is our beans  -->
+          <!-- value as a attribute -->
+          
+       <bean class="com.springcore.Employee" name="employee1">
+       
+	  <property name="emp_id" value="541"/>
+	      
+	  <property name="emp_name" value="Saurav Kumar"/>
+	    
+	  <property name="emp_email" value="krsaurav.45@gmail.com"/>
+	  
+	  <property name="emp_gender" value="male"/>
+	   
+	  <property name="emp_mobno" value="9691098742"/>
+	     
+	 <property name="emp_salary" value="85000.85"/>
+	     
+	  </bean>
+	  
+	  <bean class="com.springcore.Employee" name="employee2">
+       
+	  <property name="emp_id" value="542"/>
+	      
+	  <property name="emp_name" value="Ram Kumar"/>
+	    
+	  <property name="emp_email" value="ramkumar123@gmail.com"/>
+	  
+	  <property name="emp_gender" value="male"/>
+	   
+	  <property name="emp_mobno" value="7979969287"/>
+	     
+	 <property name="emp_salary" value="78500.85"/>
+	     
+	  </bean>
+	  
+	     <!-- This is 3rd method -->
+	  <!-- this is our beans  -->
+          <!-- value as a P schema -->
+          
+   <bean class="com.springcore.Employee" name="employee3" p:emp_id="543" p:emp_name="Gopal singh" p:emp_email="gopal.singh123@gmail.com" p:emp_gender="male" p:emp_mobno="8574152451" p:emp_salary="150000.95"/>
+</beans>

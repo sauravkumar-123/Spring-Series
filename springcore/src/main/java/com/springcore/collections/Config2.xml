@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- this is our beans 
+	<bean class="com.springcore.Employee" name="employee1"  p:studentId="24234" p:studentName="Ram Singh" p:studentAddress="Delhi"    />-->
+
+	<!-- second bean  
+	<bean class="com.springcore.Student" name="student2"  p:studentId="1341" p:studentName="Shyam Singh" p:studentAddress="Lucknow" />-->
+<context:annotation-config></context:annotation-config>
+
+<bean class="com.springcore.collections.Products" name="Products1">
+<property name="product_id">
+	      <set>
+	          <value>101</value>
+	          <value>102</value>
+	          <value>103</value>
+	          <value>104</value>
+	          <value>105</value>
+	          <value>106</value>
+	          <value>107</value>
+	          <value>101</value>
+	          <null/>
+	      </set>
+	  </property>
+
+<property name="product_name">
+	      <list>
+	          <value>Medicine</value>
+	          <value>Game</value>
+	          <value>Fruits</value>
+	          <value>Veg</value>
+	          <value>Sports</value>
+	          <value>Glocery</value>
+	          <value>Cloths</value>
+	           <null/>
+	      </list>
+	  </property>
+	  
+<property name="product_price">
+	      <map>
+	          <entry key="Medicine" value="522.95"/>
+	          <entry key="Game" value="6560.25"/>
+	          <entry key="Fruits" value="122.85"/>
+	          <entry key="Veg" value="78.00"/>
+	          <entry key="Sports" value="5225.95"/>
+	          <entry key="Glocery" value="502.15"/>
+	          <entry key="Cloths" value="522.95"/>
+	      </map>
+	  </property>
+	  
+<property name="user_name">
+  <props>
+    <prop key="user">Kumar Saurav</prop>
+    <prop key="password">KumarSaurav@123</prop>
+  </props>
+</property>
+</bean>
+
+<!-- <=============================================================================================================> -->
+
+<bean class="com.springcore.Employee" name="employee_ref1">
+      <property name="emp_id" value="586"/>
+	      
+	  <property name="emp_name" value="Charan Singh"/>
+	    
+	  <property name="emp_email" value="charansingh.12345@gmail.com"/>
+	  
+	  <property name="emp_gender" value="male"/>
+	   
+	  <property name="emp_mobno" value="8547142535"/>
+	     
+	 <property name="emp_salary" value="65555.25"/>
+</bean>
+
+<bean class="com.springcore.collections.Accounts_ReferTo_Employee" name="account_ref1">
+      <property name="accnt_id" value="157"/>
+      <property name="accnt_type" value="savings"/>
+      <property name="accnt_Bankname" value="SBI"/>
+      <property name="is_open" value="true"/>
+      <property name="accnt_balance" value="586451.95"/>
+      
+      <property name="accnt_emp" ref="employee_ref1"/>
+      <!--  
+      <property name="accnt_emp">
+          <ref bean="employee_ref1"/>
+      </property>  -->
+</bean>
+
+
+<bean class="com.springcore.Employee" name="employee_ref2">
+      <property name="emp_id" value="587"/>
+	      
+	  <property name="emp_name" value="Sima Kapoor"/>
+	    
+	  <property name="emp_email" value="simakapoor123@yahoocom"/>
+	  
+	  <property name="emp_gender" value="female"/>
+	   
+	  <property name="emp_mobno" value="7415245874"/>
+	     
+	 <property name="emp_salary" value="75550.95"/>
+</bean>
+
+<bean class="com.springcore.collections.Accounts_ReferTo_Employee" name="account_ref2">
+      <property name="accnt_id" value="186"/>
+      <property name="accnt_type" value="current"/>
+      <property name="accnt_Bankname" value="BOI"/>
+      <property name="is_open" value="false"/>
+      <property name="accnt_balance" value="785000.95"/>
+      
+      <property name="accnt_emp" ref="employee_ref2"/>
+      
+      <!-- 
+      <property name="accnt_emp">
+          <ref bean="employee_ref2"/>
+      </property> -->
+</bean>
+</beans>

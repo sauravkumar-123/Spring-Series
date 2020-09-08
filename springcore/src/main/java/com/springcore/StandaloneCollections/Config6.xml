@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+    ">
+
+<context:annotation-config></context:annotation-config>
+<!--standalone collection -->
+
+<util:set set-class="java.util.LinkedHashSet" id="Passengers_id">
+  <value>1510</value>
+  <value>1521</value>
+  <value>1532</value>
+  <value>1543</value>
+  <value>1544</value>
+  <value>1555</value>
+  <value>1510</value>
+  <value>1543</value>
+  <value>1558</value>
+  <value>1560</value>
+  <null/>
+</util:set>
+
+<util:list list-class="java.util.LinkedList" id="Passengers_Name">
+  <value>Saurav Kumar</value>
+  <value>Krishna Kumar</value>
+  <value>Gopal</value>
+  <value>Madhav Singh</value>
+  <value>Kishore kumar</value>
+  <value>R.S Khan</value>
+  <value>P.K Sinha</value>
+  <value>Kamal Jeet</value>
+  <value>Krishna Kumar</value>
+  <null/>
+
+</util:list>
+
+
+<util:map map-class="java.util.TreeMap" id="Passengers_Pnr_Destination">
+              <entry key="89584" value="Bhopal"/>
+	          <entry key="24574" value="Patna"/>
+	          <entry key="74851" value="Indore"/>
+	          <entry key="87417" value="Jaipur"/>
+	          <entry key="98547" value="Bengaluru"/>
+	          <entry key="74152" value="Patna"/>
+	          <entry key="74853" value="Bhagalpur"/>
+</util:map>
+
+<util:properties id="Passengers_useebase">
+    <prop key="user">Kumar_Saurav123</prop>
+    <prop key="password">KumarSaurav@123</prop>
+    <prop key="otp">77816</prop>
+</util:properties>
+
+<!-- Constructor Injuction Start.......................................>>>>> -->
+
+
+<bean class="com.springcore.StandaloneCollections.Passengers" name="Passengers1">
+
+    <constructor-arg ref="Passengers_id"/>  <!--//by argument -->
+    
+    <constructor-arg>    <!--  by attributes -->
+        <ref bean="Passengers_Name"/>
+    </constructor-arg>
+    
+    <constructor-arg>    <!--  by attributes -->
+        <ref bean="Passengers_Pnr_Destination"/>
+    </constructor-arg>
+    
+    <constructor-arg>    <!--  by attributes -->
+        <ref bean="Passengers_useebase"/>
+    </constructor-arg>
+    
+</bean>
+    </beans>

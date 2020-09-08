@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<bean class="com.springcore.Employee" name="employee_ref1">
+      <property name="emp_id" value="586"/>
+	      
+	  <property name="emp_name" value="Charan Singh"/>
+	    
+	  <property name="emp_email" value="charansingh.12345@gmail.com"/>
+	  
+	  <property name="emp_gender" value="male"/>
+	   
+	  <property name="emp_mobno" value="8547142535"/>
+	     
+	 <property name="emp_salary" value="65555.25"/>
+</bean>
+
+<bean class="com.springcore.collections.Accounts_ReferTo_Employee" name="account_ref1">
+      <property name="accnt_id" value="157"/>
+      <property name="accnt_type" value="savings"/>
+      <property name="accnt_Bankname" value="SBI"/>
+      <property name="is_open" value="true"/>
+      <property name="accnt_balance" value="586451.95"/>
+      
+      <property name="accnt_emp" ref="employee_ref1"/>
+      <!--  
+      <property name="accnt_emp">
+          <ref bean="employee_ref1"/>
+      </property>  -->
+</bean>
+
+
+
+
+<!-- Constructor Injuction Start.......................................>>>>> -->
+
+
+<bean class="com.springcore.ConstructorInjuction.Person" name="person1" init-method="InitMethod" destroy-method="DestoryMethod">
+    <constructor-arg value="1741" type="short"/>  <!--//by argument -->
+    
+    <constructor-arg type="java.lang.String">    <!--  by attributes -->
+        <value>"Saurav Kumar"</value>
+    </constructor-arg>
+    
+    <constructor-arg type="java.lang.String">
+        <value>"sauravkumar.tit@gmail.com" </value>
+    </constructor-arg>
+    
+    <constructor-arg type="java.util.ArrayList">
+        <list>
+	          <value>java</value>
+	          <value>python</value>
+	          <value>c++</value>
+	          <value>c</value>
+	          <value>Ruby</value>
+	          <value>c#</value>
+	          <value>Perl</value>
+	           <null/>
+	      </list>
+    </constructor-arg>
+    
+    
+    <constructor-arg type="java.util.LinkedHashSet">
+        <set>
+	          <value>7979969287</value>
+	          <value>9691098742</value>
+	          <value>8474152451</value>
+	          <value>9658471424</value>
+	          <value>7414210121</value>
+	          <value>9691098742</value>
+	          <value>8574142514</value>
+	           <null/>
+	      </set>
+    </constructor-arg>
+    
+    <constructor-arg type="java.util.HashMap">
+        <map>
+	          <entry key="140" value="medicine"/>
+	          <entry key="141" value="sports"/>
+	          <entry key="142" value="fruits"/>
+	          <entry key="143" value="glocory"/>
+	          <entry key="144" value="game"/>
+	          <entry key="145" value="veg"/>
+	          <entry key="146" value="other"/>
+	      </map>
+    </constructor-arg>
+    
+   <constructor-arg type="java.util.Properties">
+  <props>
+    <prop key="user">Kumar Saurav</prop>
+    <prop key="password">KumarSaurav@123</prop>
+    <prop key="otp">74816</prop>
+  </props>
+</constructor-arg>
+
+<constructor-arg type="com.springcore.collections.Accounts_ReferTo_Employee">
+          <ref bean="account_ref1"/>
+      </constructor-arg>
+</bean>
+    </beans>
